@@ -11,13 +11,11 @@ public class Weather {
         double probability = Math.random();
         weatherDescription = "Normal";
         resetRain();
-        if (probability < HARD_RAIN_PROBABILITY) {
-            weatherDescription = "lluvia fuerte";
-            hardRain = true;
-        } else if (probability < SOFT_RAIN_PROBABILITY) {
-            weatherDescription = "lluvia fina";
-            rain = true;
-        }
+
+        hardRain = probability <= HARD_RAIN_PROBABILITY;
+        rain = probability <= SOFT_RAIN_PROBABILITY;
+
+        weatherDescription = "Una " + (hardRain ? " fuerte " : "") + (rain ? " lluvia " : " mañana soleada");
     }
 
     private void resetRain() {
