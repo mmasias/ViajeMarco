@@ -26,11 +26,20 @@ public class Journey {
         while (onJourney) {
             days++;
             amedio.update();
-            wheather.update();
-            marco.update(wheather, amedio);
+            weather.update();
+            marco.update(weather, amedio);
             remainingDistance = remainingDistance - marco.advance() + mother.advance();
-            onJourney = INITIAL_DISTANCE > 0;
-            displayDaySumary(marco, mother, amedio, wheather);
+            onJourney = remainingDistance > 0;
+            displayDaySumary();
         }
+    }
+
+    private void displayDaySumary() {
+        System.out.println("Dia " + days);
+        System.out.println(weather.tellState());
+        System.out.println("El mono " + amedio.tellState());
+        System.out.println("Marco avanzo " + marco.advance());
+        System.out.println("Mamá avanzo " + mother.advance());
+        System.out.println("Queda " + remainingDistance);
     }
 }

@@ -13,7 +13,7 @@ public class Amedio {
         isTired = Math.random() <= AMEDIO_TIRED;
         hasEscaped = Math.random() <= AMEDIO_HAS_ESCAPED;
 
-        amedioDescription = (isTired ? " Cansado " : "") + (hasEscaped ? " Ha escapado" : "");
+        amedioDescription = (isTired ? "Se cansó " : "No se cansó ") + (hasEscaped ? "Se escapó" : "No se escapó");
 
     }
 

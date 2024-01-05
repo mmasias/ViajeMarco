@@ -9,7 +9,7 @@ public class Weather {
 
     public void update() {
         double probability = Math.random();
-        weatherDescription = "Normal";
+
         resetRain();
 
         hardRain = probability <= HARD_RAIN_PROBABILITY;
