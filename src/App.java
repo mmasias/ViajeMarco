@@ -1,6 +1,7 @@
 public class App {
     public static void main(String[] args) {
-        Journey journey = new Journey(350);
+        final int INITIAL_DISTANCE = 350;
+        Journey journey = new Journey(INITIAL_DISTANCE);
         journey.start();
     }
 }
