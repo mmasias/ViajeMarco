@@ -1,5 +1,5 @@
 
-public class Amedio {
+public class Monkey {
 
     private String amedioDescription;
     private boolean hasEscaped;
@@ -8,7 +8,7 @@ public class Amedio {
     private final double AMEDIO_TIRED = 0.25;
 
     public void update() {
-        resetAmedio();
+        resetMonkey();
 
         isTired = Math.random() <= AMEDIO_TIRED;
         hasEscaped = Math.random() <= AMEDIO_HAS_ESCAPED;
@@ -17,7 +17,7 @@ public class Amedio {
 
     }
 
-    private void resetAmedio() {
+    private void resetMonkey() {
         amedioDescription = "";
         hasEscaped = false;
         isTired = false;

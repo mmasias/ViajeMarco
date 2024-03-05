@@ -8,8 +8,8 @@ public class Journey {
 
     Mother mother;
     Weather weather;
-    Amedio amedio;
-    Marco marco;
+    Monkey amedio;
+    Boy marco;
 
     public Journey(int initialDistance) {
         INITIAL_DISTANCE = initialDistance;
@@ -18,15 +18,15 @@ public class Journey {
         days = 0;
         mother = new Mother(MOTHER_ADVANCE_PER_DAY);
         weather = new Weather();
-        amedio = new Amedio();
-        marco = new Marco();
+        amedio = new Monkey();
+        marco = new Boy();
     }
 
     public void start() {
         while (onJourney) {
             days++;
-            amedio.update();
             weather.update();
+            amedio.update();
             marco.update(weather, amedio);
             remainingDistance = remainingDistance - marco.advance() + mother.advance();
             onJourney = remainingDistance > 0;
