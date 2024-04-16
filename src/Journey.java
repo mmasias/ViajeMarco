@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Journey {
 
     private final double INITIAL_DISTANCE;
@@ -10,7 +12,7 @@ public class Journey {
     Weather weather;
     Monkey amedio;
     Boy marco;
-
+    
     public Journey(int initialDistance) {
         INITIAL_DISTANCE = initialDistance;
         onJourney = this.INITIAL_DISTANCE > 0;
@@ -29,7 +31,7 @@ public class Journey {
             amedio.update();
             marco.update(weather, amedio);
             remainingDistance = remainingDistance - marco.advance() + mother.advance();
-            onJourney = remainingDistance > 0;
+            onJourney = remainingDistance >= 0;
             displayDaySumary();
         }
     }
@@ -38,8 +40,10 @@ public class Journey {
         System.out.println("Dia " + days);
         System.out.println(weather.tellState());
         System.out.println("El mono " + amedio.tellState());
-        System.out.println("Marco avanzo " + marco.advance());
-        System.out.println("Mamá avanzo " + mother.advance());
-        System.out.println("Queda " + remainingDistance);
+        System.out.println("Marco avanzo " + (int) marco.advance());
+        System.out.println("Mamá avanzo " + (int) mother.advance());
+        System.out.println("Queda " + (int) remainingDistance);
+        System.out.println("=".repeat(30));
+        new Scanner(System.in).nextLine();
     }
 }
