@@ -8,10 +8,10 @@ public class Journey {
     private int days;
     private boolean onJourney;
 
-    Mother mother;
-    Weather weather;
-    Monkey amedio;
-    Boy marco;
+    private Mother mother;
+    private Weather weather;
+    private Monkey amedio;
+    private Boy marco;
     
     public Journey(int initialDistance) {
         INITIAL_DISTANCE = initialDistance;
