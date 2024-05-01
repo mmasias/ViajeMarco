@@ -1,4 +1,3 @@
-
 public class Mother {
 
     private double motherAdvancePerDay;
@@ -11,4 +10,7 @@ public class Mother {
         return motherAdvancePerDay;
     }
 
+    public String tellState() {
+        return "Hoy avancé " + String.format("%.2f",advance()) + " Km";
+    }
 }

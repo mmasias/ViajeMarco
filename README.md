@@ -1,3 +1,3 @@
 # Viaje de Marco
 
-Borrador de trabajo
+En esta versión, Amedio "está dentro" de Marco.

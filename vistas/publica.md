@@ -18,8 +18,15 @@ Vista pública de las clases que componen [la solución](/src/App.java)
 
 ## [Boy](/src/Boy.java)
 
-- `void update(Weather weather, Monkey monkey)`
+- `void update(Weather weather)`
 - `double advance()`
+- `String tellState()`
+
+## [Mother](/src/Mother.java)
+
+- `void update(Weather weather)`
+- `double advance()`
+- `String tellState()`
 
 ## [Journey](/src/Journey.java)
 

@@ -1,21 +1,18 @@
 
 public class Weather {
 
-    private String weatherDescription;
     private boolean rain;
     private boolean hardRain;
     final private double HARD_RAIN_PROBABILITY = 0.1;
     final private double SOFT_RAIN_PROBABILITY = 0.4;
 
     public void update() {
+
         double probability = Math.random();
 
         resetRain();
-
         hardRain = probability <= HARD_RAIN_PROBABILITY;
-        rain = probability <= SOFT_RAIN_PROBABILITY;
-
-        weatherDescription = "Una " + (hardRain ? " fuerte " : "") + (rain ? " lluvia " : " mañana soleada");
+        rain = probability <= SOFT_RAIN_PROBABILITY;        
     }
 
     private void resetRain() {
@@ -24,7 +21,7 @@ public class Weather {
     }
 
     public String tellState() {
-        return weatherDescription;
+        return "Hoy tocó una " + (rain ? "lluvia " : "mañana soleada.") + (hardRain ? " fuerte." : ".");
     }
 
     public boolean isRaining() {

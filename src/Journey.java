@@ -10,9 +10,8 @@ public class Journey {
 
     private Mother mother;
     private Weather weather;
-    private Monkey amedio;
     private Boy marco;
-    
+
     public Journey(int initialDistance) {
         INITIAL_DISTANCE = initialDistance;
         onJourney = this.INITIAL_DISTANCE > 0;
@@ -20,7 +19,6 @@ public class Journey {
         days = 0;
         mother = new Mother(MOTHER_ADVANCE_PER_DAY);
         weather = new Weather();
-        amedio = new Monkey();
         marco = new Boy();
     }
 
@@ -28,21 +26,22 @@ public class Journey {
         while (onJourney) {
             days++;
             weather.update();
-            amedio.update();
-            marco.update(weather, amedio);
+            marco.update(weather);
             remainingDistance = remainingDistance - marco.advance() + mother.advance();
-            onJourney = remainingDistance >= 0;
+            if (remainingDistance <= 0) {
+                onJourney = !onJourney;
+                remainingDistance = 0;
+            }
             displayDaySumary();
         }
     }
 
     private void displayDaySumary() {
-        System.out.println("Dia " + days);
-        System.out.println(weather.tellState());
-        System.out.println("El mono " + amedio.tellState());
-        System.out.println("Marco avanzo " + (int) marco.advance());
-        System.out.println("Mamá avanzo " + (int) mother.advance());
-        System.out.println("Queda " + (int) remainingDistance);
+        System.out.println("Dia " + days + " y Marco " + (onJourney ? "sigue buscando a su madre" : "ha encontrado a su madre!"));
+        System.out.println("> " + weather.tellState());
+        System.out.println("> Marco: " + marco.tellState());
+        System.out.println("> Mamá: " + mother.tellState());
+        System.out.println("> Quedan " + (int) remainingDistance + " Km");
         System.out.println("=".repeat(30));
         new Scanner(System.in).nextLine();
     }

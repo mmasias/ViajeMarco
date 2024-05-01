@@ -13,8 +13,7 @@ public class Monkey {
         isTired = Math.random() <= AMEDIO_TIRED;
         hasEscaped = Math.random() <= AMEDIO_HAS_ESCAPED;
 
-        amedioDescription = (isTired ? "Se cansó " : "No se cansó ") + (hasEscaped ? "Se escapó" : "No se escapó");
-
+        amedioDescription = (isTired ? "se cansó" : "no se cansó") + (isTired == hasEscaped ? " y " : " pero ") + (hasEscaped ? "se escapó" : "no se escapó");
     }
 
     private void resetMonkey() {
@@ -34,5 +33,4 @@ public class Monkey {
     public boolean isTired() {
         return isTired;
     }
-
 }
